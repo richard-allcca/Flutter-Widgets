@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
@@ -58,8 +59,12 @@ class _CustomListTile extends StatelessWidget {
         // Navigator.of(context).push(MaterialPageRoute(
         //   builder: (context) => const ButtonScreen(),
         // ));
+
         // NOTE - Example with named routes at main
-        Navigator.pushNamed(context, menuItem.link);
+        // Navigator.pushNamed(context, menuItem.link);
+
+        // NOTE - Example with go_route
+        context.push(menuItem.link);
       },
     );
   }
