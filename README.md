@@ -2,7 +2,9 @@
 
 A new Flutter project.
 
+```CDM
     node 16.17.0
+```
 
 ## Links
 
@@ -20,3 +22,12 @@ Por otro lado, el widget Stack() organiza sus elementos secundarios en una pila,
 En resumen, la diferencia principal entre Column() y Stack() es la forma en que organizan y muestran sus elementos secundarios. Column() los apila verticalmente, mientras que Stack() los superpone en capas. La elección entre ellos dependerá de la disposición y el diseño específico que se desee lograr en la interfaz de usuario de la aplicación Flutter.
 
 Es importante tener en cuenta que esta explicación se basa en la documentación y ejemplos proporcionados por la comunidad de Flutter y puede haber otros detalles o casos de uso específicos que no se mencionen aquí.
+
+- Configuración para usar Assets
+
+Dentro de el archivo `pubspec.yaml` agrega:
+
+``` yaml
+    assets:
+        - assets/images/
+```
