@@ -64,7 +64,7 @@ class _ControllerProgressIndicator extends StatelessWidget {
         final progressValue = snapshot.data ?? 0;
 
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -85,6 +85,7 @@ class _ControllerProgressIndicator extends StatelessWidget {
   }
 
   // REVIEW - Example without StreamBuilder
+
   // @override
   // Widget build(BuildContext context) {
   //   return const Padding(
