@@ -31,3 +31,17 @@ Dentro de el archivo `pubspec.yaml` agrega:
     assets:
         - assets/images/
 ```
+
+- Flutter_riverpod
+
+Para consumir un provider de `flutter_riverpod` en un `stateLessWidget`
+debes Reemplazar este por un `ConsumerWidget`
+
+```Dart
+    // Example 1 to modifier the state
+    ref.read(counterProvider.notifier).state++;
+
+    // Example 2 to modifier the state
+    ref.read(counterProvider.notifier)
+        .update((state) => state + 1);
+```

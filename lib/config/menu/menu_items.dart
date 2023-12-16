@@ -63,4 +63,16 @@ const appMenuItems = <MenuItem>[
     link: '/infinite',
     icon: Icons.list_alt_outlined
   ),
+  MenuItem(
+    title: 'Riverpod Counter',
+    subTitle: 'Introducción a Riverpod',
+    link: '/counter',
+    icon: Icons.add
+  ),
+  MenuItem(
+    title: 'Theme change with Riverpod',
+    subTitle: 'Demo of theme change',
+    link: '/theme_changer',
+    icon: Icons.color_lens_outlined
+  ),
 ];

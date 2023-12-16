@@ -45,7 +45,6 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
     pageViewController.addListener(() {
       final page = pageViewController.page;
-      print('final $page');
       if( !endReached && page! >= (slides.length - 1.5)){
         setState(() {
           endReached = true;
