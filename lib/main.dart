@@ -18,14 +18,25 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
 
-    final int selectedRadioColor = ref.watch(selectedColorProvider);
-    final isDarkMode = ref.watch(themeProvider);
+    // Props for without Custom provider
+    // final int selectedRadioColor = ref.watch(selectedColorProvider);
+    // final isDarkMode = ref.watch(themeProvider);
+
+
+    // Props for with Custom provider
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
 
     return MaterialApp.router(
       title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: selectedRadioColor, isDarkMode: isDarkMode ).getTheme(),
+
+      // Method without Custom provider
+      // theme: AppTheme(selectedColor: selectedRadioColor, isDarkMode: isDarkMode ).getTheme(),
+
+      // Method with Custom provider
+      theme: appTheme.getTheme(),
+
     );
 
     // NOTE - Example with named routes in home_screen

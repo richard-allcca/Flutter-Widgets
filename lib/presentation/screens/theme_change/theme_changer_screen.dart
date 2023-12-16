@@ -9,7 +9,12 @@ class ThemeChangerScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final isDarkMode = ref.watch(themeProvider);
+
+    // Method with provider mutable
+    // final isDarkMode = ref.watch(themeProvider);
+
+    // Method with provider custom
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +25,12 @@ class ThemeChangerScreen extends ConsumerWidget {
                 ? Icons.dark_mode_outlined
                 : Icons.light_mode_outlined),
             onPressed: () {
-              ref.read(themeProvider.notifier).update((state) => !state);
+
+              // Method with provider mutable
+              // ref.read(themeProvider.notifier).update((state) => !state);
+
+              // Method with provider custom
+              ref.read(themeNotifierProvider.notifier).toggleDarkMode();
             },
           )
         ],
@@ -37,7 +47,12 @@ class _ThemeChangerView extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
 
     final List<Color> colors = ref.watch(colorListProvider);
-    final int selectedRadioColor = ref.watch(selectedColorProvider);
+
+    // Method with provider mutable
+    // final int selectedRadioColor = ref.watch(selectedColorProvider);
+
+    // Method with provider custom
+    final int selectedRadioColor = ref.watch(themeNotifierProvider).selectedColor;
 
     return ListView.builder(
       itemCount: colors.length,
@@ -51,7 +66,12 @@ class _ThemeChangerView extends ConsumerWidget {
           value: index,
           groupValue: selectedRadioColor,
           onChanged: (value) {
-            ref.read(selectedColorProvider.notifier).state = index;
+
+            // Method with provider mutable
+            // ref.read(selectedColorProvider.notifier).state = index;
+
+            // Method with provider mutable
+            ref.read(themeNotifierProvider.notifier).changeColorIndex(index);
         },);
       },
     );
