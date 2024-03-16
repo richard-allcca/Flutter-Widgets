@@ -8,8 +8,9 @@ A new Flutter project.
 
 ## Links
 
-[Go router](https://pub.dev/packages/go_router)
-[Material example widgets](https://m3.material.io/develop/flutter)
+- [Go router](https://pub.dev/packages/go_router)
+- [Material example widgets](https://m3.material.io/develop/flutter)
+- [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
 
 ## Notes
 

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:widgets_app/config/router/app_router.dart';
-import 'package:widgets_app/config/theme/app_theme.dart';
-import 'package:widgets_app/presentation/provider/theme_provider.dart';
+import 'package:widgets_app/presentation/screens/counter/counter_function_screen.dart';
 
 void main() {
   runApp(
@@ -15,29 +13,43 @@ void main() {
 class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
+  // DESC - First screen of counter used theme of material 3
   @override
   Widget build(BuildContext context, ref) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.blue
+      ),
+      // home: const CounterScreen(),
+      home: const CounterFunctionScreen(),
+    );
+  }
 
-    // Props for without Custom provider
+  // @override
+  // Widget build(BuildContext context, ref) {
+
+    // Props for use without Custom provider
     // final int selectedRadioColor = ref.watch(selectedColorProvider);
     // final isDarkMode = ref.watch(themeProvider);
 
 
-    // Props for with Custom provider
-    final AppTheme appTheme = ref.watch(themeNotifierProvider);
+    // Props for use with Custom provider
+    // final AppTheme appTheme = ref.watch(themeNotifierProvider);
 
-    return MaterialApp.router(
-      title: 'Flutter Widgets',
-      routerConfig: appRouter,
-      debugShowCheckedModeBanner: false,
+    // return MaterialApp.router(
+    //   title: 'Flutter Widgets',
+    //   routerConfig: appRouter,
+    //   debugShowCheckedModeBanner: false,
 
       // Method without Custom provider
       // theme: AppTheme(selectedColor: selectedRadioColor, isDarkMode: isDarkMode ).getTheme(),
 
       // Method with Custom provider
-      theme: appTheme.getTheme(),
+    //   theme: appTheme.getTheme(),
 
-    );
+    // );
 
     // NOTE - Example with named routes in home_screen
 
@@ -50,5 +62,5 @@ class MainApp extends ConsumerWidget {
     //     '/cards':(context) => const CardsScreen()
     //   },
     // );
-  }
+  // }
 }

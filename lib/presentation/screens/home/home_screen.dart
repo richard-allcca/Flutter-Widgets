@@ -21,6 +21,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Flutter + Material j3'),
       ),
       body: _HomeView(),
+      // Menú lateral
       drawer: SideMenu(scaffoldkey: scaffoldKey),
     );
   }
@@ -49,7 +50,7 @@ class _CustomListTile extends StatelessWidget {
     required this.menuItem,
   });
 
-  final MenuItem menuItem;
+  final MenuItem menuItem;   
 
   @override
   Widget build(BuildContext context) {
