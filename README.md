@@ -1,10 +1,20 @@
 # widgets_app
 
-A new Flutter project.
-
 ```CDM
     node 16.17.0
 ```
+
+<details>
+  <summary>Table of Contents</summary>
+
+- <a href="#notes-of-widgets">Notes of Widgets</a>
+- <a href="#configuration-to-use-assets">Configuration to used Assets</a>
+
+- How to
+
+    1. npm run dev
+
+</details>
 
 ## Links
 
@@ -12,9 +22,19 @@ A new Flutter project.
 - [Material example widgets](https://m3.material.io/develop/flutter)
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
 
-## Notes
+## Notes of Widgets
 
-- Diferencia entre Column() y Stack()
+### ListView() y sus tipos
+
+El widget ListView se utiliza para construir una lista de widgets desplazables
+
+ListView.builder: Este tipo de ListView es ideal cuando tienes una lista de elementos de longitud desconocida o muy grande. Utiliza un constructor de elementos bajo demanda, lo que significa que solo se construyen los elementos visibles en la pantalla. Esto mejora el rendimiento y la eficiencia al mostrar listas largas.
+
+ListView.separated: Este tipo de ListView es similar a ListView.builder, pero agrega separadores entre los elementos de la lista. Puedes personalizar el separador utilizando el parámetro "separatorBuilder".
+
+ListView.custom: Este tipo de ListView te permite tener un control total sobre la construcción de los elementos de la lista. Puedes personalizar completamente la apariencia y el diseño de cada elemento utilizando el parámetro "childrenDelegate".
+
+### Diferencia entre Column() y Stack()
 
 El widget Column() organiza sus elementos secundarios en una matriz vertical o columna en el eje horizontal del diseño. Esto significa que los elementos secundarios se apilan uno encima del otro en orden vertical. Es útil cuando se desea mostrar una lista de elementos o cuando se necesita una disposición vertical de widgets.
 
@@ -24,7 +44,7 @@ En resumen, la diferencia principal entre Column() y Stack() es la forma en que 
 
 Es importante tener en cuenta que esta explicación se basa en la documentación y ejemplos proporcionados por la comunidad de Flutter y puede haber otros detalles o casos de uso específicos que no se mencionen aquí.
 
-- Configuración para usar Assets
+## Configuration to use Assets
 
 Dentro de el archivo `pubspec.yaml` agrega:
 
@@ -46,3 +66,5 @@ debes Reemplazar este por un `ConsumerWidget`
     ref.read(counterProvider.notifier)
         .update((state) => state + 1);
 ```
+
+## Second section
