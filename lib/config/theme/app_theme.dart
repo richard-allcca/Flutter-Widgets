@@ -29,7 +29,8 @@ class AppTheme {
       useMaterial3: true,
       brightness: isDarkMode ? Brightness.dark : Brightness.light,
       colorSchemeSeed: colorList[selectedColor],
-      appBarTheme: const AppBarTheme(centerTitle: true));
+      appBarTheme: const AppBarTheme(centerTitle: true)
+  );
 
   AppTheme copyWith({
     int? selectedColor,

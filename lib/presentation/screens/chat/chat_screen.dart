@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/presentation/widgets/Her_message_bubble.dart';
+import 'package:widgets_app/presentation/widgets/my_message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -37,9 +39,10 @@ class _ChatView extends StatelessWidget {
                     // 'Context' contiene el árbol de widgets
                     //'index' la posición del listView que tiene en este punto
                     itemBuilder: (context, index) {
-                      return Text('Indice: $index');
-                    },
-                    )),
+                      return (index % 2 == 0)
+                          ? const HerMessageBubble()
+                          : const MyMessageBubble();
+                    })),
               const Text('Hola Mundo')
             ],
           ),
