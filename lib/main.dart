@@ -2,7 +2,7 @@
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:widgets_app/presentation/screens/counter/counter_function_screen.dart';
+// import 'package:widgets_app/presentation/screens/screens.dart';
 
 // void main() {
 //   runApp(
@@ -34,6 +34,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
+import 'package:widgets_app/presentation/screens/screens.dart';
 
 void main() => runApp(const MyApp());
 
@@ -46,17 +47,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Yes or Not app',
       theme: AppTheme(isDarkMode: false, selectedColor: 2).getTheme(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: Center(
-          child: FilledButton.tonal(
-            child: const Text('Click me'),
-            onPressed: (){},
-          ),
-        ),
-      ),
+      home: const ChatScreen(),
     );
   }
 }
