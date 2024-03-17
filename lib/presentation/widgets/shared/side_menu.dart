@@ -4,11 +4,11 @@ import 'package:widgets_app/config/menu/menu_items.dart';
 
 class SideMenu extends StatefulWidget {
 
-  final GlobalKey<ScaffoldState> scaffoldkey;
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   const SideMenu({
     super.key,
-    required this.scaffoldkey
+    required this.scaffoldKey
   });
 
   @override
@@ -34,7 +34,7 @@ class _SideMenuState extends State<SideMenu> {
         context.push(menuItem.link);
 
         // Method to return to home by closing the menu
-        widget.scaffoldkey.currentState?.closeDrawer();
+        widget.scaffoldKey.currentState?.closeDrawer();
       },
       children: [
         Padding(
