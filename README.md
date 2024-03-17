@@ -9,6 +9,7 @@
 
 - <a href="#notes-of-widgets">Notes of Widgets</a>
 - <a href="#configuration-to-use-assets">Configuration to used Assets</a>
+- <a href="#notes-on-folders-and-files">Notas sobre carpetas y archivos</a>
 
 </details>
 
@@ -17,6 +18,14 @@
 - [Go router](https://pub.dev/packages/go_router)
 - [Material example widgets](https://m3.material.io/develop/flutter)
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
+
+## Notes on folders and files
+
+La carpeta 'domain' se utiliza para almacenar las entidades de tu aplicación. Las entidades son objetos que representan conceptos clave en tu dominio de negocio. Por ejemplo, si estás construyendo una aplicación de comercio electrónico, podrías tener entidades como 'Producto', 'Carrito de compras' o 'Usuario'.
+
+también puede contener otros elementos relacionados con la lógica de negocio, como interfaces de repositorio, casos de uso y validaciones. Estos elementos ayudan a definir cómo interactúan las entidades con otras capas de la aplicación, como la capa de infraestructura o la capa de presentación.
+
+Las entidades encapsulan la lógica y el comportamiento relacionados con el dominio
 
 ## Notes of Widgets
 
