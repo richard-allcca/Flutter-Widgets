@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// NOTE - Para usar hexadecimales de color en flutter usa la notación '0xFF49149F'
+
 const List<Color> colorList = [
   Colors.blue,
   Colors.teal,
