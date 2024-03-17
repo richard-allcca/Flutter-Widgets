@@ -10,10 +10,6 @@
 - <a href="#notes-of-widgets">Notes of Widgets</a>
 - <a href="#configuration-to-use-assets">Configuration to used Assets</a>
 
-- How to
-
-    1. npm run dev
-
 </details>
 
 ## Links
