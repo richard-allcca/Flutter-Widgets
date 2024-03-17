@@ -51,6 +51,16 @@ class _ImageBubble extends StatelessWidget {
         height: 150,
         // Si le das width y height necesitas 'fit' para que se ajuste el ctn
         fit: BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if(loadingProgress == null) return child;
+
+          return Container(
+            width: size.width * 0.7,
+            height: 150,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: const Text('Ella esta escribiendo'),
+          );
+        },
       )
     );
   }
