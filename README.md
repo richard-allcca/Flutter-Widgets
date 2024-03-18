@@ -10,6 +10,7 @@
 - <a href="#notes-of-widgets">Notes of Widgets</a>
 - <a href="#configuration-to-use-assets">Configuration to used Assets</a>
 - <a href="#notes-on-folders-and-files">Notas sobre carpetas y archivos</a>
+- <a href="#configuration-for-state-management">Configuration for state management</a>
 
 </details>
 
@@ -58,7 +59,34 @@ Dentro de el archivo `pubspec.yaml` agrega:
         - assets/images/
 ```
 
-- Flutter_riverpod
+## Configuration for state management
+
+### Provider
+
+Para consumir este state management necesitas declararlo en la parte mas alta de tu app
+ó en lo mas alto de donde quieres que se consuma ese estado.
+
+Utiliza el 'MultiProvider' y dentro crea la instancia inicial de tu provider, si no necesitas el contexto del builder solo usa '_'
+
+```dart
+    @override
+    Widget build(BuildContext context) {
+        <!-- MultiProvider -->
+        return MultiProvider(
+        providers: [
+            ChangeNotifierProvider(create: (_) => ChatProvider())
+        ],
+        child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Yes or Not app',
+            theme: AppTheme(isDarkMode: false, selectedColor: 6).getTheme(),
+            home: const ChatScreen(),
+        ),
+        );
+    }
+```
+
+### Flutter_riverpod
 
 Para consumir un provider de `flutter_riverpod` en un `stateLessWidget`
 debes Reemplazar este por un `ConsumerWidget`

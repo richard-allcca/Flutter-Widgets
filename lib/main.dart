@@ -33,8 +33,10 @@
 // SECTION - Application Yes or Not chat
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
 import 'package:widgets_app/presentation/screens/screens.dart';
+import 'package:widgets_app/presentation/state-provider/chat_provider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -43,11 +45,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Yes or Not app',
-      theme: AppTheme(isDarkMode: false, selectedColor: 6).getTheme(),
-      home: const ChatScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ChatProvider())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Yes or Not app',
+        theme: AppTheme(isDarkMode: false, selectedColor: 6).getTheme(),
+        home: const ChatScreen(),
+      ),
     );
   }
 }
