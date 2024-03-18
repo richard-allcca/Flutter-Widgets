@@ -40,6 +40,7 @@ class _ChatView extends StatelessWidget {
             children: [
               Expanded(
                   child: ListView.builder(
+                    controller: chatProvider.chatScrollController,
                     itemCount: chatProvider.messagesList.length,
                     // 'Context' contiene el árbol de widgets
                     //'index' la posición del listView que tiene en este punto
