@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:widgets_app/domain/entities/message.dart';
+import 'package:widgets_app/presentation/state-provider/chat_provider.dart';
 import 'package:widgets_app/presentation/widgets/widgets.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -27,6 +30,9 @@ class _ChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final chatProvider = context.watch<ChatProvider>();
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -34,16 +40,21 @@ class _ChatView extends StatelessWidget {
             children: [
               Expanded(
                   child: ListView.builder(
-                    itemCount: 50,
+                    itemCount: chatProvider.messagesList.length,
                     // 'Context' contiene el árbol de widgets
                     //'index' la posición del listView que tiene en este punto
                     itemBuilder: (context, index) {
-                      return (index % 2 == 0)
+                      final message = chatProvider.messagesList[index];
+
+                      return (message.fromWho == FromWho.hers)
                           ? const HerMessageBubble()
-                          : const MyMessageBubble();
+                          : MyMessageBubble(message: message);
                     })
               ),
-              const MessageFieldBox()
+              MessageFieldBox(
+                // onValue: chatProvider.sendMessage // simplified
+                onValue: (value) => chatProvider.sendMessage(value) // normal
+              )
             ],
           ),
       ),

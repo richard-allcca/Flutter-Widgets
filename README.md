@@ -18,6 +18,7 @@
 
 - [Go router](https://pub.dev/packages/go_router)
 - [Material example widgets](https://m3.material.io/develop/flutter)
+- [Provider](https://pub.dev/packages/provider)
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
 
 ## Notes on folders and files
@@ -65,6 +66,14 @@ Dentro de el archivo `pubspec.yaml` agrega:
 
 Para consumir este state management necesitas declararlo en la parte mas alta de tu app
 ó en lo mas alto de donde quieres que se consuma ese estado.
+
+The easiest way to read a value is by using the extension methods on [BuildContext]:
+
+```Text
+context.watch<T>(), which makes the widget listen to changes on T
+context.read<T>(), which returns T without listening to it
+context.select<T, R>(R cb(T value)), which allows a widget to listen to only a small part of T.
+```
 
 Utiliza el 'MultiProvider' y dentro crea la instancia inicial de tu provider, si no necesitas el contexto del builder solo usa '_'
 

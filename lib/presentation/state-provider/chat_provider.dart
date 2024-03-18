@@ -3,18 +3,24 @@ import 'package:widgets_app/domain/entities/message.dart';
 
 class ChatProvider extends ChangeNotifier {
 
-  List<Message> message = [
+  List<Message> messagesList = [
     Message(
-      text: 'hola',
+      text: 'hola gata',
       fromWho: FromWho.me
     ),
     Message(
-      text: 'mundo',
+      text: 'acabo de volver',
+      fromWho: FromWho.hers
+    ),
+    Message(
+      text: 'te espero para la cena',
       fromWho: FromWho.hers
     ),
   ];
 
   Future<void> sendMessage(String text) async {
-    // TODO - Implementar método
+    final newMessage = Message(text: text, fromWho: FromWho.me);
+    messagesList.add(newMessage);
+    notifyListeners();
   }
 }
