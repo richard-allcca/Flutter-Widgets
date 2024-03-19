@@ -20,6 +20,7 @@
 - [Material example widgets](https://m3.material.io/develop/flutter)
 - [Provider](https://pub.dev/packages/provider)
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
+- [Quicktype, format](https://quicktype.io/)
 
 ## Notes on folders and files
 
@@ -28,6 +29,8 @@ La carpeta 'domain' se utiliza para almacenar las entidades de tu aplicación. L
 también puede contener otros elementos relacionados con la lógica de negocio, como interfaces de repositorio, casos de uso y validaciones. Estos elementos ayudan a definir cómo interactúan las entidades con otras capas de la aplicación, como la capa de infraestructura o la capa de presentación.
 
 Las entidades encapsulan la lógica y el comportamiento relacionados con el dominio
+
+La carpeta 'infrastructure' es un punto medio entre domain y presentation
 
 ## Notes of Widgets
 

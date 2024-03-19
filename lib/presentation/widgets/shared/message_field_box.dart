@@ -54,9 +54,9 @@ class MessageFieldBox extends StatelessWidget {
       controller: textController,
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        onValue(value);
         textController.clear();
         focusNode.requestFocus();
+        onValue(value);
       },
       // onChanged: (value) {
       //   print('changed: $value');

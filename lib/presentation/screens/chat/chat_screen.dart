@@ -15,7 +15,7 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://noticias.animeonegai.com/wp-content/uploads/2023/08/roxy-mushoku-tensei.jpg'),
+                'https://images.pexels.com/photos/14262264/pexels-photo-14262264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
           ),
         ),
         title: const Text('Chat screen'),
@@ -48,7 +48,7 @@ class _ChatView extends StatelessWidget {
                       final message = chatProvider.messagesList[index];
 
                       return (message.fromWho == FromWho.hers)
-                          ? const HerMessageBubble()
+                          ? HerMessageBubble(message: message)
                           : MyMessageBubble(message: message);
                     })
               ),

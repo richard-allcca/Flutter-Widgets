@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
-  const HerMessageBubble({super.key});
+  final Message message;
+
+  const HerMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +20,17 @@ class HerMessageBubble extends StatelessWidget {
               color: colors.secondary,
               borderRadius: BorderRadius.circular(20)
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('Text example response',
-                style: TextStyle(color: Colors.white)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(
+              message.text,
+                style: const TextStyle(color: Colors.white)),
           ),
         ),
 
         const SizedBox(height: 5),
 
-        _ImageBubble(),
+        _ImageBubble(message.imageUrl!),
 
         const SizedBox(height: 10),
       ],
@@ -37,6 +41,9 @@ class HerMessageBubble extends StatelessWidget {
 // NOTE - url https://yesno.wtf/api
 
 class _ImageBubble extends StatelessWidget {
+  final String imageUrl;
+
+  const _ImageBubble(this.imageUrl);
 
 
   @override
@@ -46,7 +53,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        "https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif",
+        imageUrl,
         width: size.width * 0.7,
         height: 150,
         // Si le das width y height necesitas 'fit' para que se ajuste el ctn
