@@ -11,6 +11,9 @@ class ChatProvider extends ChangeNotifier {
     Message(text: 'Hola amor!', fromWho: FromWho.me),
     Message(text: 'ya regresaste del trabajo?', fromWho: FromWho.me),
     Message(text: 'Vamos?', fromWho: FromWho.hers, imageUrl: 'https://images.pexels.com/photos/14262264/pexels-photo-14262264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+    Message(text: 'ya regresaste del trabajo?', fromWho: FromWho.me),
+    Message(text: 'Vamos?', fromWho: FromWho.hers, imageUrl: 'https://images.pexels.com/photos/14262264/pexels-photo-14262264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+    // Message(text: 'no', fromWho: FromWho.hers, imageUrl: 'https://yesno.wtf/assets/no/25-55dc62642f92cf4110659b3c80e0d7ec.gif'),
   ];
 
    Future<void> sendMessage(String text) async {
@@ -28,12 +31,12 @@ class ChatProvider extends ChangeNotifier {
   }
 
    Future<void> moveScrollToBottom() async {
-    await Future.delayed(const Duration(milliseconds: 100));
+    await Future.delayed(const Duration(milliseconds: 200));
 
     chatScrollController.animateTo(
         chatScrollController
             .position.maxScrollExtent, // tell you to scroll to end
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 200),
         curve: Curves.easeOut); // type animation
   }
 

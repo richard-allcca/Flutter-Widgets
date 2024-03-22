@@ -11,6 +11,7 @@
 - <a href="#configuration-to-use-assets">Configuration to used Assets</a>
 - <a href="#notes-on-folders-and-files">Notas sobre carpetas y archivos</a>
 - <a href="#configuration-for-state-management">Configuration for state management</a>
+- <a href="#commands-util">Comandos útiles</a>
 
 </details>
 
@@ -112,4 +113,11 @@ debes Reemplazar este por un `ConsumerWidget`
         .update((state) => state + 1);
 ```
 
-## Second section
+## Commands util
+
+En caso tengas problemas para correr el proyecto con el chat ó mas de un proyecto en un mismo repo usa:
+
+```Bash
+    flutter clean
+    flutter pub get
+```
