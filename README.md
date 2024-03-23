@@ -1,8 +1,18 @@
-# widgets_app
+# Widgets_app
 
-```CDM
+Proyecto creado en:
+
+```Bash
     node 16.17.0
 ```
+
+Para levantar el proyecto en local:
+
+```Bash
+    flutter pub get
+```
+
+En el caso del app de TokTik debes agregar la carpeta videos en assets y su contenido además configurar pubspec.yaml para recursos estáticos (ejemplo en Configuration to use Assets )
 
 <details>
   <summary>Table of Contents</summary>
@@ -15,23 +25,14 @@
 
 </details>
 
-## Links
+## Links to resources
 
 - [Go router](https://pub.dev/packages/go_router)
 - [Material example widgets](https://m3.material.io/develop/flutter)
 - [Provider](https://pub.dev/packages/provider)
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
 - [Quicktype, format](https://quicktype.io/)
-
-## Notes on folders and files
-
-La carpeta 'domain' se utiliza para almacenar las entidades de tu aplicación. Las entidades son objetos que representan conceptos clave en tu dominio de negocio. Por ejemplo, si estás construyendo una aplicación de comercio electrónico, podrías tener entidades como 'Producto', 'Carrito de compras' o 'Usuario'.
-
-también puede contener otros elementos relacionados con la lógica de negocio, como interfaces de repositorio, casos de uso y validaciones. Estos elementos ayudan a definir cómo interactúan las entidades con otras capas de la aplicación, como la capa de infraestructura o la capa de presentación.
-
-Las entidades encapsulan la lógica y el comportamiento relacionados con el dominio
-
-La carpeta 'infrastructure' es un punto medio entre domain y presentation
+- [Videos verticales Pexels](https://www.pexels.com/search/videos/vertical/)
 
 ## Notes of Widgets
 
@@ -57,12 +58,27 @@ Es importante tener en cuenta que esta explicación se basa en la documentación
 
 ## Configuration to use Assets
 
+Para usar recursos estáticos configura:
+
 Dentro de el archivo `pubspec.yaml` agrega:
 
 ``` yaml
     assets:
         - assets/images/
+        - assets/videos/
 ```
+
+![Image example](image.png)
+
+## Notes on folders and files
+
+La carpeta 'domain' se utiliza para almacenar las entidades de tu aplicación. Las entidades son objetos que representan conceptos clave en tu dominio de negocio. Por ejemplo, si estás construyendo una aplicación de comercio electrónico, podrías tener entidades como 'Producto', 'Carrito de compras' o 'Usuario'.
+
+también puede contener otros elementos relacionados con la lógica de negocio, como interfaces de repositorio, casos de uso y validaciones. Estos elementos ayudan a definir cómo interactúan las entidades con otras capas de la aplicación, como la capa de infraestructura o la capa de presentación.
+
+Las entidades encapsulan la lógica y el comportamiento relacionados con el dominio
+
+La carpeta 'infrastructure' es un punto medio entre domain y presentation
 
 ## Configuration for state management
 

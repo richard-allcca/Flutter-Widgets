@@ -1,7 +1,7 @@
 
 import 'package:widgets_app/domain/entities/message.dart';
 
-// Si la data llega como string aquí hace la conversión a mapa
+// Si la data llega como string este fragmento hace la conversión a mapa
 // YesNoModel nombreFromJson(String str) => YesNoModel.fromJsonMap(json.decode(str));
 
 class YesNoModel {
