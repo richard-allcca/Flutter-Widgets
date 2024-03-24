@@ -14,6 +14,8 @@ Para levantar el proyecto en local:
 
 En el caso del app de TokTik debes agregar la carpeta videos en assets y su contenido además configurar pubspec.yaml para recursos estáticos (ejemplo en Configuration to use Assets )
 
+También configurar los 'permisos' para transmitir videos de internet como muestra la doc de Flutter (Enlace en 'Links to resources')
+
 <details>
   <summary>Table of Contents</summary>
 
@@ -33,6 +35,8 @@ En el caso del app de TokTik debes agregar la carpeta videos en assets y su cont
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
 - [Quicktype, format](https://quicktype.io/)
 - [Videos verticales Pexels](https://www.pexels.com/search/videos/vertical/)
+- [Doc Flutter - video player](https://docs.flutter.dev/cookbook/plugins/play-video)
+- [Tutorial Animate_do](https://www.youtube.com/watch?v=48jIUnc1TQo&list=PLCKuOXG0bPi1E-uXVd4j2iLqkbTYaHARX&index=2)
 
 ## Notes of Widgets
 
