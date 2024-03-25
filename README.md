@@ -25,6 +25,12 @@
     flutter pub get
 ```
 
+## List of projects in this repository
+
+1. Counter basic and Counter with state
+2. App yes or not - chat
+3. App of videos Tok Tik
+
 En el caso del app de TokTik debes agregar la carpeta videos en assets y su contenido además configurar pubspec.yaml para recursos estáticos (ejemplo en Configuration to use Assets )
 
 También configurar los 'permisos' para transmitir videos de internet como muestra la doc de Flutter (Enlace en 'Links to resources')
@@ -64,11 +70,9 @@ Es importante tener en cuenta que esta explicación se basa en la documentación
 
 ## Configuration to use Assets
 
-Para usar recursos estáticos configura:
-
-Dentro de el archivo `pubspec.yaml` agrega:
-
 ``` yaml
+    # Para usar recursos estáticos configura:
+    # Dentro de el archivo `pubspec.yaml` agrega:
     assets:
         - assets/images/
         - assets/videos/
