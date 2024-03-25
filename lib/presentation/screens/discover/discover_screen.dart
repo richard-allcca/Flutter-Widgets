@@ -13,7 +13,7 @@ class DiscoverScreen extends StatelessWidget {
     // final discoverProvider = Provider.of<DiscoverProvider>(context, listen: false);
 
     // Consumo de contexto con método nuevo
-    final discoverProvider = context.read<DiscoverProvider>();
+    final discoverProvider = context.watch<DiscoverProvider>();
 
     return Scaffold(
       body: discoverProvider.initialLoading
