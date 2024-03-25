@@ -1,24 +1,9 @@
 # Widgets_app
 
-Proyecto creado en:
-
-```Bash
-    node 16.17.0
-```
-
-Para levantar el proyecto en local:
-
-```Bash
-    flutter pub get
-```
-
-En el caso del app de TokTik debes agregar la carpeta videos en assets y su contenido además configurar pubspec.yaml para recursos estáticos (ejemplo en Configuration to use Assets )
-
-También configurar los 'permisos' para transmitir videos de internet como muestra la doc de Flutter (Enlace en 'Links to resources')
-
 <details>
   <summary>Table of Contents</summary>
 
+- <a href="#links-resources">Enlaces a recursos</a>
 - <a href="#notes-of-widgets">Notes of Widgets</a>
 - <a href="#configuration-to-use-assets">Configuration to used Assets</a>
 - <a href="#notes-on-folders-and-files">Notas sobre carpetas y archivos</a>
@@ -26,6 +11,23 @@ También configurar los 'permisos' para transmitir videos de internet como muest
 - <a href="#commands-util">Comandos útiles</a>
 
 </details>
+
+## Levantar el proyecto
+
+1. Selecciona el dispositivo
+2. f5 para iniciar en modo debug
+
+```Bash
+    # Proyecto creado en:
+    node 16.17.0
+
+    # en caso tengas problemas para correr el proyecto
+    flutter pub get
+```
+
+En el caso del app de TokTik debes agregar la carpeta videos en assets y su contenido además configurar pubspec.yaml para recursos estáticos (ejemplo en Configuration to use Assets )
+
+También configurar los 'permisos' para transmitir videos de internet como muestra la doc de Flutter (Enlace en 'Links to resources')
 
 ## Links to resources
 
