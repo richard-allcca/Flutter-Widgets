@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:widgets_app/domain/entities/message.dart';
-import 'package:widgets_app/presentation/state-provider/chat_provider.dart';
+import 'package:widgets_app/presentation/provider/chat_provider.dart';
 import 'package:widgets_app/presentation/widgets/widgets.dart';
 
 class ChatScreen extends StatelessWidget {
