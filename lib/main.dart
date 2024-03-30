@@ -64,6 +64,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
+import 'package:widgets_app/infrastructure/datasources/local_video_datasource_impl.dart';
+import 'package:widgets_app/infrastructure/repositories/video_posts_repository_impl.dart';
 import 'package:widgets_app/presentation/provider/discover_provider.dart';
 import 'package:widgets_app/presentation/screens/screens.dart';
 
@@ -74,9 +76,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final videoPostRepository = VideoPostRepositoryImpl(
+      videoDatasource: LocalVideoDataSourceImpl()
+    );
+
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => DiscoverProvider()..loadNextPage())
+        ChangeNotifierProvider(create: (_) => DiscoverProvider(videoRepository: videoPostRepository)..loadNextPage())
       ],
       child: MaterialApp(
         title: 'Tok Tik',

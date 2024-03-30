@@ -5,7 +5,7 @@ import 'package:widgets_app/domain/entities/video_post.dart';
 import 'package:widgets_app/infrastructure/model/videos_model.dart';
 import 'package:widgets_app/shared/data/local_video_posts.dart';
 
-class LocalVideoDataSource implements VideoPostsDataSource {
+class LocalVideoDataSourceImpl implements VideoPostsDataSource {
   @override
   Future<List<VideoPost>> getFavoriteVideoByUser(String userId) {
     // without implement - only demo
@@ -17,7 +17,7 @@ class LocalVideoDataSource implements VideoPostsDataSource {
 
     await Future.delayed(const Duration(seconds: 2));
 
-    final List<VideoPost> newVideos = videoPosts.map(
+    final List<VideoPost> newVideos = localVideoPost.map(
       (video) =>  LocalVideosModel.fromJsonMap(video).toVideoEntity()
     ).toList();
 

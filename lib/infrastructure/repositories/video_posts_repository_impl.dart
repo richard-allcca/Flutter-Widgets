@@ -6,11 +6,11 @@ import 'package:widgets_app/domain/datasources/video_posts_datasource.dart';
 import 'package:widgets_app/domain/entities/video_post.dart';
 
 
-class VideoPostRepository implements VideoPostsRepository {
+class VideoPostRepositoryImpl implements VideoPostsRepository {
 
   final VideoPostsDataSource videoDatasource;
 
-  VideoPostRepository({
+  VideoPostRepositoryImpl({
     required this.videoDatasource
   });
 
