@@ -61,36 +61,59 @@
 
 // SECTION - TOK TIK
 
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'package:widgets_app/config/theme/app_theme.dart';
+// import 'package:widgets_app/infrastructure/datasources/local_video_datasource_impl.dart';
+// import 'package:widgets_app/infrastructure/repositories/video_posts_repository_impl.dart';
+// import 'package:widgets_app/presentation/provider/discover_provider.dart';
+// import 'package:widgets_app/presentation/screens/screens.dart';
+
+// void main() => runApp(const MyApp());
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+
+//     final videoPostRepository = VideoPostRepositoryImpl(
+//       videoDatasource: LocalVideoDataSourceImpl()
+//     );
+
+//     return MultiProvider(
+//       providers: [
+//         ChangeNotifierProvider(create: (_) => DiscoverProvider(videoRepository: videoPostRepository)..loadNextPage())
+//       ],
+//       child: MaterialApp(
+//         title: 'Tok Tik',
+//         debugShowCheckedModeBanner: false,
+//         theme: AppTheme(isDarkMode: true, selectedColor: 4).getTheme(),
+//         home: const DiscoverScreen(),
+//         ),
+//     );
+//   }
+// }
+
+// SECTION - Widgets
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:widgets_app/config/theme/app_theme.dart';
-import 'package:widgets_app/infrastructure/datasources/local_video_datasource_impl.dart';
-import 'package:widgets_app/infrastructure/repositories/video_posts_repository_impl.dart';
-import 'package:widgets_app/presentation/provider/discover_provider.dart';
-import 'package:widgets_app/presentation/screens/screens.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp( const MainApp() );
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    final videoPostRepository = VideoPostRepositoryImpl(
-      videoDatasource: LocalVideoDataSourceImpl()
-    );
-
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => DiscoverProvider(videoRepository: videoPostRepository)..loadNextPage())
-      ],
-      child: MaterialApp(
-        title: 'Tok Tik',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme(isDarkMode: true, selectedColor: 4).getTheme(),
-        home: const DiscoverScreen(),
-        ),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          body: Center(
+        child: Text('hello world'),
+      )),
     );
   }
 }

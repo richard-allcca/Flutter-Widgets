@@ -16,6 +16,9 @@
 
 1. Selecciona el dispositivo
 2. f5 para iniciar en modo debug
+3. IMPORTANTE!
+
+    si no corre algún proyecto puede ser debido a la modificación del archivo ***build.gradle*** en la ruta android/app/build.gradle
 
 ```Bash
     # Proyecto creado en:
