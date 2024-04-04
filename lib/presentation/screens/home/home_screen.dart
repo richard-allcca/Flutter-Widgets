@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       key: scaffoldKey,
       appBar: AppBar(
         // centerTitle: true ,
-        title: const Text('Flutter + Material j3'),
+        title: const Text('Flutter + Material 3'),
       ),
       body: _HomeView(),
       // Menú lateral
@@ -28,9 +28,6 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _HomeView extends StatelessWidget {
-  // const _HomeView({
-  //   super.key,
-  // });
 
   @override
   Widget build(BuildContext context) {
@@ -50,19 +47,19 @@ class _CustomListTile extends StatelessWidget {
     required this.menuItem,
   });
 
-  final MenuItem menuItem;   
+  final MenuItem menuItem;
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
 
     return ListTile(
-      // icon to used the final widget
+      // icon to used the start widget
       leading: Icon(
         menuItem.icon,
         color: colors.primary,
       ),
-      // Icon to used the start widget
+      // Icon to used the final widget
       trailing: Icon(
         Icons.arrow_forward_ios_rounded,
         color: colors.primary,
