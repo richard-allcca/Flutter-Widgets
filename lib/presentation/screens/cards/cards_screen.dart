@@ -25,7 +25,7 @@ class CardsScreen extends StatelessWidget {
     );
   }
 }
-
+ 
 class _CardsView extends StatelessWidget {
 
   @override

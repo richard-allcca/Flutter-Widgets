@@ -46,6 +46,7 @@ También configurar los 'permisos' para transmitir videos de internet como muest
 - [Riverpod](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
 - [Quicktype, format](https://quicktype.io/)
 - [Videos verticales Pexels](https://www.pexels.com/search/videos/vertical/)
+- [Doc Flutter - navigation](https://docs.flutter.dev/ui/navigation)
 - [Doc Flutter - video player](https://docs.flutter.dev/cookbook/plugins/play-video)
 - [Tutorial Animate_do](https://www.youtube.com/watch?v=48jIUnc1TQo&list=PLCKuOXG0bPi1E-uXVd4j2iLqkbTYaHARX&index=2)
 

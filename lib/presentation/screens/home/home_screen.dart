@@ -32,6 +32,7 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      // physics: const BouncingScrollPhysics(),
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
         final menuItem = appMenuItems[index];
@@ -67,15 +68,15 @@ class _CustomListTile extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-        // NOTE - Example without named routes
+        // NOTE - Example to navigate to other screen without named routes
         // Navigator.of(context).push(MaterialPageRoute(
         //   builder: (context) => const ButtonScreen(),
         // ));
 
-        // NOTE - Example with named routes at main
+        // NOTE - Example to navigate to other screen with named routes at main
         // Navigator.pushNamed(context, menuItem.link);
 
-        // NOTE - Example with go_route
+        // NOTE - Example to navigate to other screen with go_route
         // context.push(CardsScreen.name);
         context.push(menuItem.link);
       },

@@ -114,6 +114,11 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme(isDarkMode: false, selectedColor: 1).getTheme(),
       home: const HomeScreen(),
+      // NOTE - To navigate to other screen Example 2 in homeScreen
+      // routes: {
+      //   '/buttons': (context) => const ButtonScreen(),
+      //   '/cards': (context) => const CardsScreen(),
+      // },
     );
   }
 }
