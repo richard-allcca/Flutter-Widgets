@@ -26,6 +26,8 @@ final slides = <SlideInfo>[
 ];
 
 class AppTutorialScreen extends StatefulWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const name = 'tutorial_screen';
 
   const AppTutorialScreen({super.key});

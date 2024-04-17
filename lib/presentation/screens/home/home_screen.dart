@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
-import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 import 'package:widgets_app/presentation/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const String name = 'home_screen';
 
   const HomeScreen({super.key});
@@ -78,8 +79,10 @@ class _CustomListTile extends StatelessWidget {
         // Navigator.pushNamed(context, menuItem.link);
 
         // NOTE - Example to navigate to other screen with go_route
+        // To navigate with named route, the name is missing from each menu item
+        // context.pushNamed(CardsScreen.name);
+
         context.push(menuItem.link); // To navigate with link route
-        // context.push(CardsScreen.name); // To navigate with name route
       },
     );
   }

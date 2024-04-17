@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UiControlsScreen extends StatelessWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const name = 'ui_controls_screen';
 
   const UiControlsScreen({super.key});

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProgressScreen extends StatelessWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const name = 'progress_screen';
 
   const ProgressScreen({super.key});

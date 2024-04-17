@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgets_app/presentation/provider/theme_provider.dart';
 
 class ThemeChangerScreen extends ConsumerWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const String name = 'Theme_screen';
 
   const ThemeChangerScreen({super.key});

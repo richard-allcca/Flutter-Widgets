@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class InfinityScrollScreen extends StatefulWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const name = 'infinity_screen';
 
   const InfinityScrollScreen({super.key});

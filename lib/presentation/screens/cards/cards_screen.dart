@@ -11,6 +11,7 @@ const cards = <Map<String, dynamic>>[
 
 class CardsScreen extends StatelessWidget {
 
+  // Para utilizar rutas con nombre de go-router
   static const String name = 'cards_Screen';
 
   const CardsScreen({super.key});

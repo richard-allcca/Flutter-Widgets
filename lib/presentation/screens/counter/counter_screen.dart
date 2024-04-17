@@ -10,6 +10,8 @@ para el uso del estado del counter
 */
 
 class CounterScreen extends StatefulWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const String name = 'counter_screen';
 
   const CounterScreen({super.key});

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class SnackbarScreen extends StatelessWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const name = 'snackbar_screen';
 
   const SnackbarScreen({super.key});

@@ -3,6 +3,8 @@ import 'dart:math' show Random;
 import 'package:flutter/material.dart';
 
 class AnimatedScreen extends StatefulWidget {
+
+  // Para utilizar rutas con nombre de go-router
   static const name = 'animated_screen';
 
   const AnimatedScreen({super.key});
