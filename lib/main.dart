@@ -98,8 +98,8 @@
 // SECTION - Widgets
 
 import 'package:flutter/material.dart';
+import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
-import 'package:widgets_app/presentation/screens/home/home_screen.dart';
 
 void main() {
   runApp( const MainApp() );
@@ -108,17 +108,37 @@ void main() {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  // SECTION - To use with navigation of example 1
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     debugShowCheckedModeBanner: false,
+  //     theme: AppTheme(isDarkMode: false, selectedColor: 1).getTheme(),
+  //     home: const HomeScreen(),
+  //   );
+  // }
+
+  // SECTION - To use with navigation of example 2
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     debugShowCheckedModeBanner: false,
+  //     theme: AppTheme(isDarkMode: false, selectedColor: 1).getTheme(),
+  //     home: const HomeScreen(),
+  //     routes: {
+  //       '/buttons': (context) => const ButtonScreen(),
+  //       '/cards': (context) => const CardsScreen(),
+  //     },
+  //   );
+  // }
+
+  // SECTION - To use with navigation of go-router
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: AppTheme(isDarkMode: false, selectedColor: 1).getTheme(),
-      home: const HomeScreen(),
-      // NOTE - To navigate to other screen Example 2 in homeScreen
-      // routes: {
-      //   '/buttons': (context) => const ButtonScreen(),
-      //   '/cards': (context) => const CardsScreen(),
-      // },
     );
   }
 }

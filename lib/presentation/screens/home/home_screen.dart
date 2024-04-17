@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 import 'package:widgets_app/presentation/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -68,17 +69,17 @@ class _CustomListTile extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-        // NOTE - Example to navigate to other screen without named routes
+        // NOTE - Example 1 to navigate to other screen without named routes
         // Navigator.of(context).push(MaterialPageRoute(
         //   builder: (context) => const ButtonScreen(),
         // ));
 
-        // NOTE - Example to navigate to other screen with named routes at main
+        // NOTE - Example 2 to navigate to other screen with named routes at main
         // Navigator.pushNamed(context, menuItem.link);
 
         // NOTE - Example to navigate to other screen with go_route
-        // context.push(CardsScreen.name);
-        context.push(menuItem.link);
+        context.push(menuItem.link); // To navigate with link route
+        // context.push(CardsScreen.name); // To navigate with name route
       },
     );
   }
