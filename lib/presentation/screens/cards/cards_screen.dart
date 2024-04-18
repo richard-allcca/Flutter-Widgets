@@ -9,6 +9,8 @@ const cards = <Map<String, dynamic>>[
   {'elevation': 5.0, 'label': 'Elevation 5'},
 ];
 
+// LINK - doc buttons - https://m3.material.io/develop/flutter
+
 class CardsScreen extends StatelessWidget {
 
   // Para utilizar rutas con nombre de go-router
@@ -26,15 +28,15 @@ class CardsScreen extends StatelessWidget {
     );
   }
 }
- 
+
 class _CardsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView( // para hacer el scroll
+    return SingleChildScrollView( // Permite tener un scroll vertical
       child: Column(
         children: [
-          const Text('Cards nomales'),
+          const Text('Cards normales'),
           ...cards.map((card) => _CardType1(elevation: card['elevation'],label: card['label'],)),
 
           const Text('Cards Outline'),
@@ -46,7 +48,7 @@ class _CardsView extends StatelessWidget {
           const Text('Cards With images'),
           ...cards.map((card) => _CardType4(elevation: card['elevation'],label: card['label'],)),
           // Final space
-          const SizedBox(height: 100,)
+          const SizedBox(height: 100,) // to add space for the final space
         ],
       ),
     );
@@ -54,7 +56,7 @@ class _CardsView extends StatelessWidget {
 }
 
 
-// Normal Cards
+// Normal Cards (without border radius)
 class _CardType1 extends StatelessWidget {
   final String label;
   final double elevation;
@@ -66,7 +68,17 @@ class _CardType1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // final colors = Theme.of(context).colorScheme;
+
     return Card(
+      // shape:  RoundedRectangleBorder( // Border radius
+      //   borderRadius: const BorderRadius.all(Radius.circular(12)),
+      //   side: BorderSide(
+      //     color: colors.outline,
+      //     width: 0.3,
+      //   )
+      // ),
       elevation: elevation,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
@@ -91,7 +103,7 @@ class _CardType1 extends StatelessWidget {
   }
 }
 
-// Outline Cards
+// Outline Cards (border radius)
 class _CardType2 extends StatelessWidget {
   final String label;
   final double elevation;
@@ -107,7 +119,7 @@ class _CardType2 extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return Card(
-      shape:  RoundedRectangleBorder(
+      shape:  RoundedRectangleBorder( // Border radius
         borderRadius: const BorderRadius.all(Radius.circular(12)),
         side: BorderSide(
           color: colors.outline
@@ -192,15 +204,16 @@ class _CardType4 extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Card(
-      clipBehavior: Clip.hardEdge, // Prevent overflow
+      clipBehavior: Clip.hardEdge, // Prevent overflow of images at container boundaries
       elevation: elevation,
-      child: Stack(
+      child: Stack( // Allows one element over another like z-index
         children: [
           Image.network(
             'https://picsum.photos/id/${elevation.toInt()}/600/250',
-            height: 350,
+            height: 200,
             fit: BoxFit.cover,
           ),
+
           Align(
             alignment: Alignment.topRight,
             child: Container(

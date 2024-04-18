@@ -33,19 +33,22 @@ class _ButtonsView extends StatelessWidget {
 
     final colors = Theme.of(context).colorScheme;
 
-    return SizedBox(
-      width: double.infinity,
+    return SizedBox( // Contenedor
+      width: double.infinity,// Para ocupar todo el width del dispositivo (cuidado)
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: Wrap(
           spacing: 10,
           alignment: WrapAlignment.center,
           children: [
-            const ElevatedButton(onPressed: null, child: Text('Elevated Disabled')),
 
             // Button normal
             ElevatedButton(onPressed: (){}, child: const Text('Elevated button')),
 
+            // Button deactivated
+            const ElevatedButton(onPressed: null, child: Text('Elevated Disabled')),
+
+            // Button with icon
             ElevatedButton.icon(
               onPressed: (){},
               icon: const Icon(Icons.access_alarm_rounded),
@@ -55,6 +58,7 @@ class _ButtonsView extends StatelessWidget {
             // Button with fill
             FilledButton(onPressed: (){}, child: const Text('Filled Button')),
 
+            // Button with filled and icon
             FilledButton.icon(
               onPressed: (){},
               icon: const Icon(Icons.access_alarm_outlined),
@@ -64,6 +68,7 @@ class _ButtonsView extends StatelessWidget {
             // Buttons type outline
             OutlinedButton(onPressed: (){}, child: const Text('Outline button')),
 
+            // Buttons type outline with icon
             OutlinedButton.icon(
               onPressed: (){},
               icon: const Icon(Icons.access_time_filled_outlined),
@@ -73,6 +78,7 @@ class _ButtonsView extends StatelessWidget {
             // Text button
             TextButton(onPressed: (){}, child: const Text('Text button')),
 
+            // Text button with icon
             TextButton.icon(
               onPressed: (){},
               icon: const Icon(Icons.cabin_outlined),
@@ -80,17 +86,20 @@ class _ButtonsView extends StatelessWidget {
             ),
 
             // Icon button
-            IconButton(onPressed: (){}, icon: const Icon(Icons.app_registration_outlined), style: ButtonStyle(
-              iconColor: MaterialStatePropertyAll(colors.primary)
-            )),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.app_registration_outlined),
+                style: ButtonStyle(
+                    iconColor: MaterialStatePropertyAll(colors.primary))
+            ),
+
+            // Icon button with background
             IconButton(
               onPressed: (){},
               icon: const Icon(Icons.dark_mode_outlined),
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(colors.primary), // background
-                iconColor: const MaterialStatePropertyAll(Colors.white) // texto
-              ),
-
+                backgroundColor: MaterialStatePropertyAll(colors.primary),
+                iconColor: const MaterialStatePropertyAll(Colors.white)),
             ),
 
             // Custom button
@@ -110,7 +119,7 @@ class CustomButton extends StatelessWidget {
 
     final colors = Theme.of(context).colorScheme;
 
-    return ClipRRect(
+    return ClipRRect( // Para hacer border radius al btn
       borderRadius: BorderRadius.circular(20),
       child: Material(
         color: colors.inversePrimary,
