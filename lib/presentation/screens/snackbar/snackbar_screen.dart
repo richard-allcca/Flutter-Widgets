@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+//  DESC - On this screen have the modals
+
 class SnackbarScreen extends StatelessWidget {
 
   // Para utilizar rutas con nombre de go-router
@@ -8,23 +10,10 @@ class SnackbarScreen extends StatelessWidget {
 
   const SnackbarScreen({super.key});
 
-  void showCustomSnackbar(BuildContext context) {
-    ScaffoldMessenger.of(context).clearSnackBars();
-
-    final snackBar = SnackBar(
-      content: const Text('hola mundo'),
-      action: SnackBarAction(label: 'OK!', onPressed: () {}),
-      duration: const Duration(seconds: 2),
-    );
-
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
-
-  void openDialog(BuildContext context) {
+  void openDialogLicenses(BuildContext context) {
     showDialog(
       context: context,
-      barrierDismissible:
-          false, // REVIEW - Obliga a aceptar términos para cerrar modal
+      barrierDismissible: false, // Obliga dark click a uno de los botones para cerrar
       builder: (context) => AlertDialog(
         title: const Text('¿Estás seguro'),
         content: const Text(
@@ -41,29 +30,46 @@ class SnackbarScreen extends StatelessWidget {
     );
   }
 
+  void showCustomSnackbar(BuildContext context) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+
+    final snackBar = SnackBar(
+      content: const Text('hola mundo soy un snackbar'),
+      action: SnackBarAction(label: 'OK!', onPressed: () {}),
+      duration: const Duration(seconds: 2),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Title
       appBar: AppBar(
         title: const Text('Snackbar y Diálogos'),
       ),
 
-      // Body with Dialogo
+      // Body with Licenses and Dialogs
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Native dialog
             FilledButton.tonal(
                 onPressed: () {
-                  showAboutDialog(context: context, children: [
-                    const Text('In nulla commodo ut consectetur')
+                  // El titulo de este dialog viene del title de main
+                  showAboutDialog(
+                    context: context,
+                    children: [
+                    const Text('Este showAboutDialog nativo de flutter permite ver licencias de paquetes que usa')
                   ]);
                 },
-                child: const Text('Licencias usadas')),
+                child: const Text('Mostrar diálogo')),
+
+            // Custom dialog
             FilledButton.tonal(
-                onPressed: () => openDialog(context),
-                child: const Text('Mostrar diálogo'))
+                onPressed: () => openDialogLicenses(context),
+                child: const Text('Licencias usadas')),
           ],
         ),
       ),
