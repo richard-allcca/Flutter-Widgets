@@ -2,6 +2,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+// DESC - Para esta pantalla se utilizo assets y su configuración
+
 class SlideInfo {
   final String title;
   final String caption;
@@ -42,12 +44,12 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
   bool endReached = false;
 
   @override
-  void initState() {
+  void initState() { // controla el cicle de vida de un stateFullWidget
     super.initState();
 
     pageViewController.addListener(() {
-      final page = pageViewController.page;
-      if( !endReached && page! >= (slides.length - 1.5)){
+      final page = pageViewController.page ?? 0;
+      if( !endReached && page >= (slides.length - 1.5)){
         setState(() {
           endReached = true;
         });
@@ -56,7 +58,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
   }
 
   @override
-  void dispose() {
+  void dispose() {// Necesario para limpiar el listener o el controller
     pageViewController.dispose();
     super.dispose();
   }
@@ -64,17 +66,21 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blueGrey[100],
       body: Stack(
         children: [
+
+          // Crea un slider cada elemento ocupa toda la pantalla
           PageView(
             controller: pageViewController,
             physics: const BouncingScrollPhysics(),
             children: slides
                 .map((e) => _Slide(
                     title: e.title, caption: e.caption, imageUrl: e.imageUrl))
-                .toList(),
+                .toList(), // para que sea una lista de widgets
           ),
+
+          // Button to scape
           Positioned(
             top: 50,
             right: 20,
@@ -86,12 +92,14 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
               onPressed: () => context.pop(),
             ),
           ),
+
+          // Ternario para validar final del slider y mostrar el button
           endReached
               ? Positioned(
                   bottom: 30,
                   right: 30,
                   child: FadeInRight(
-                    from: 15,
+                    from: 15, // Indica que se mueva 15 unidades similar a pixeles
                     delay: const Duration(seconds: 1),
                     child: FilledButton(
                       onPressed: () => context.pop(),
@@ -115,15 +123,17 @@ class _Slide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final titleStyle = Theme.of(context).textTheme.titleLarge;
     final captionStyle = Theme.of(context).textTheme.bodySmall;
+
     // return const Placeholder();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center, // align column
+          crossAxisAlignment: CrossAxisAlignment.start, // align row
           children: [
             Image(image: AssetImage(imageUrl)),
             const SizedBox(height: 20),

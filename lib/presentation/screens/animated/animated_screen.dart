@@ -2,6 +2,8 @@ import 'dart:math' show Random;
 
 import 'package:flutter/material.dart';
 
+// LINK - https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html
+
 class AnimatedScreen extends StatefulWidget {
 
   // Para utilizar rutas con nombre de go-router
@@ -16,14 +18,14 @@ class AnimatedScreen extends StatefulWidget {
 class _AnimatedScreenState extends State<AnimatedScreen> {
   double width = 50;
   double height = 50;
-  Color color = Colors.indigo;
   double borderRadius = 10;
+  Color color = Colors.indigo;
 
   void changeShape() {
     final random = Random();
 
-    width = random.nextInt(300) + 120; // + 50 evita que sea 0
-    height = random.nextInt(300) + 120; // + 50 evita que sea 0
+    width = random.nextInt(300) + 120; // + 120 valor mínimo evita que sea 0
+    height = random.nextInt(300) + 120; // + 120 valor mínimo evita que sea 0
     borderRadius = random.nextInt(100) + 20;
     color = Color.fromRGBO(
         random.nextInt(255), // red
@@ -48,8 +50,8 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 400),
           curve: Curves.easeOutCubic, // Type Animation
-          width: width <= 0 ? 0 : width,
-          height: height <= 0 ? 0 : height,
+          width: width <= 0 ? 0 : width, // Prevenir que sea menor a 0
+          height: height <= 0 ? 0 : height, // Prevenir que sea menor a 0
           decoration: BoxDecoration(
               color: color,
               borderRadius:
@@ -57,22 +59,8 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         ),
       ),
 
-      // EXAMPLE without animation
-
-      // body: Center(
-      //   child: Container(
-      //     width: 100,
-      //     height: 100,
-      //     decoration: BoxDecoration(
-      //       color: Colors.blue,
-      //       borderRadius: BorderRadius.circular(20)
-      //     ),
-      //   ),
-      // ),
-
       floatingActionButton: FloatingActionButton(
-        // onPressed: () => changeShape(), // con argumentos
-        onPressed: changeShape, // sin argumentos
+        onPressed: changeShape,
         child: const Icon(Icons.play_arrow_rounded),
       ),
     );

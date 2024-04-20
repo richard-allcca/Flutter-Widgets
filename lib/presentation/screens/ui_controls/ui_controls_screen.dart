@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class UiControlsScreen extends StatelessWidget {
-
   // Para utilizar rutas con nombre de go-router
   static const name = 'ui_controls_screen';
 
@@ -25,6 +24,7 @@ class _UiControlsView extends StatefulWidget {
   State<_UiControlsView> createState() => _UiControlsViewState();
 }
 
+// Lista de opciones para tipo de transporte en select
 enum Transportation { car, plane, boat, submarine }
 
 class _UiControlsViewState extends State<_UiControlsView> {
@@ -34,12 +34,20 @@ class _UiControlsViewState extends State<_UiControlsView> {
   bool wantsLunch = false;
   bool wantsDinner = false;
 
-
   @override
   Widget build(BuildContext context) {
     return ListView(
       physics: const ClampingScrollPhysics(), // prevent bounce effect in IOS
       children: [
+
+        // Switch button basic
+        Switch(
+            value: isDeveloper,
+            onChanged: (value) => setState(() {
+                  isDeveloper = !isDeveloper;
+                })),
+
+        // Switch button type card
         SwitchListTile(
           title: const Text('Developer Mode'),
           subtitle: const Text('Controles adicionales'),
@@ -48,6 +56,8 @@ class _UiControlsViewState extends State<_UiControlsView> {
             isDeveloper = !isDeveloper;
           }),
         ),
+
+        // Lista desplegable de Select list of radio buttons
         ExpansionTile(
           title: const Text('Vehículo de transporte'),
           subtitle: Text('$selectedTransportation'),
@@ -86,27 +96,26 @@ class _UiControlsViewState extends State<_UiControlsView> {
                     })),
           ],
         ),
+
+        // Checkboxes
         CheckboxListTile(
-          title: const Text('¿Desayuno?'),
-          value:  wantsBreakfast,
-          onChanged: (value) => setState(() {
-            wantsBreakfast = !wantsBreakfast;
-          })
-        ),
+            title: const Text('¿Desayuno?'),
+            value: wantsBreakfast,
+            onChanged: (value) => setState(() {
+                  wantsBreakfast = !wantsBreakfast;
+                })),
         CheckboxListTile(
-          title: const Text('¿Almuerzo?'),
-          value:  wantsDinner,
-          onChanged: (value) => setState(() {
-            wantsDinner = !wantsDinner;
-          })
-        ),
+            title: const Text('¿Almuerzo?'),
+            value: wantsDinner,
+            onChanged: (value) => setState(() {
+                  wantsDinner = !wantsDinner;
+                })),
         CheckboxListTile(
-          title: const Text('Cena?'),
-          value:  wantsLunch,
-          onChanged: (value) => setState(() {
-            wantsLunch = !wantsLunch;
-          })
-        ),
+            title: const Text('Cena?'),
+            value: wantsLunch,
+            onChanged: (value) => setState(() {
+                  wantsLunch = !wantsLunch;
+                })),
       ],
     );
   }

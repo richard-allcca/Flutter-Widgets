@@ -139,7 +139,7 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(isDarkMode: false, selectedColor: 1).getTheme(),
+      theme: AppTheme(isDarkMode: false, selectedColor: 3).getTheme(),
     );
   }
 }
