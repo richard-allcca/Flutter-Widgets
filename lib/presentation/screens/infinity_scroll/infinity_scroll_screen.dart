@@ -41,7 +41,7 @@ class _InfinityScrollScreenState extends State<InfinityScrollScreen> {
   }
 
   Future loadNextPage() async {
-    if (isLoading) return;
+    if (isLoading) return; // si esta cargando
     isLoading = true;
     setState(() {});
 
@@ -50,6 +50,7 @@ class _InfinityScrollScreenState extends State<InfinityScrollScreen> {
     addFiveImages();
     isLoading = false;
 
+    // Evita que durante la carga del los elementos salgas de la pantalla y se rompa
     if (!isMounted) return;
 
     setState(() {});
@@ -73,8 +74,8 @@ class _InfinityScrollScreenState extends State<InfinityScrollScreen> {
   }
 
   void moveScrollToBottom() {
-    // Verifica el enfoque si esta cerca del final
-    if (scrollController.position.pixels + 100 >=
+    // Verifica si aun hay elementos por mostrar
+    if (scrollController.position.pixels + 100 <=
         scrollController.position.maxScrollExtent) return;
 
     scrollController.animateTo(
@@ -86,14 +87,7 @@ class _InfinityScrollScreenState extends State<InfinityScrollScreen> {
   void addFiveImages() {
     final lastId = imagesIds.last;
 
-    // Normal method
-    // imagesIds.add(lastId + 1);
-    // imagesIds.add(lastId + 2);
-    // imagesIds.add(lastId + 3);
-
-    // Improved method
     imagesIds.addAll([1, 2, 3, 4, 5].map((e) => lastId + e));
-
     setState(() {});
   }
 
@@ -103,15 +97,15 @@ class _InfinityScrollScreenState extends State<InfinityScrollScreen> {
       // appBar: AppBar(
       //   title: const Text('InfiniteScroll'),
       // ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[300],
       body: MediaQuery.removePadding(
         context: context,
-        removeTop: true,
-        removeBottom: true,
+        removeTop: true, // Quita el espacio reservado del top de la pantalla
+        removeBottom: true, // Quita el espacio reservado del bottom de la pantalla
         child: RefreshIndicator(
           onRefresh: () => onRefresh(),
-          edgeOffset: 10, // Le da 10 de top al loader de refresh
-          strokeWidth: 2,
+          edgeOffset: 10, // Le da 10 de top del icon para separarlo del dynamic island
+          strokeWidth: 2, // hace mas delgado el icon
           child: ListView.builder(
               controller: scrollController,
               itemCount: imagesIds.length,
@@ -131,13 +125,12 @@ class _InfinityScrollScreenState extends State<InfinityScrollScreen> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.pop(),
-        // child: const Icon(Icons.arrow_back_ios_new_outlined),
         child: isLoading
-            ? const CircularProgressIndicator()
-            // ? SpinPerfect(
+            // ? SpinPerfect( // Example with animate-do
             //     infinite: true,
             //     child: const Icon(Icons.refresh_rounded),
             //   )
+            ? const CircularProgressIndicator()
             : FadeIn(child: const Icon(Icons.arrow_back_ios_new_outlined)),
       ),
     );
