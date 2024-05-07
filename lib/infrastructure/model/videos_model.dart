@@ -22,6 +22,7 @@ class LocalVideosModel {
       views: json["views"] ?? 0,
     );
 
+  // Método para mapear lo que reviva Factory (json)
   VideoPost toVideoEntity() => VideoPost(
     caption: name,
     videoUrl: videoUrl,

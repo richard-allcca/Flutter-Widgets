@@ -22,6 +22,7 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
 
   late VideoPlayerController controller;
 
+  // INFO Necesario, configuraciones iniciales de video al cargarlo en pantalla
   @override
   void initState() {
     super.initState();
@@ -32,9 +33,9 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
       ..play();
   }
 
+  // INFO Necesario, Evita que el video siga reproduciendo si no lo están viendo
   @override
   void dispose() {
-    // Evita que el video siga reproduciendo si no lo están viendo
     controller.dispose();
     super.dispose();
   }
@@ -45,6 +46,7 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
       future: controller.initialize(),
       builder: (context, snapshot) {
 
+        // Solo muestra el loading si aun no carga el video
         if (snapshot.connectionState != ConnectionState.done ) {
           return const Center(child: CircularProgressIndicator(strokeWidth: 2));
         }
@@ -58,7 +60,7 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
             controller.play();
           },
           child: AspectRatio(
-            aspectRatio: controller.value.aspectRatio,
+            aspectRatio: controller.value.aspectRatio,// basado en el video que va a mostrar
             child: Stack(
               children: [
                 VideoPlayer(controller),
@@ -68,7 +70,7 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
                   listStops: const [0.8,1.0],
                 ),
 
-                // Texto
+                // Description
                 Positioned(
                   bottom: 50,
                   left: 20,

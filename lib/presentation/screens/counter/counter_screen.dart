@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-// NOTE
+// INFO - Counter con estado local sin management state
 /*
-Ejemplo básico de una pantalla con 'scaffold'
-que te permite tener elementos en toda la pantalla como head body and footer
-*/
-/* Ejemplo de uso para StatelessWidget que se cambio a un StatefulWidget
-para el uso del estado del counter
+Example basic of a screen with 'scaffold'
+which allows you to have elements on the screen like head, body and footer.
+Example of use with StatelessWidget that change to StatefulWidget for management the state
 */
 
 class CounterScreen extends StatefulWidget {
@@ -29,10 +27,16 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(
         title: const Text('Counter Screen'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.light_mode_outlined),
+            onPressed: (){},
+          )
+        ],
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center, // Alignment of the row
           children: [
             Text('$clickCounter',
                 style: const TextStyle(

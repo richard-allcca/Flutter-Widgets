@@ -20,22 +20,29 @@ class _SideMenuState extends State<SideMenu> {
 
   @override
   Widget build(BuildContext context) {
+    // Notch - this is the space on top of screen
     final hasNotch = MediaQuery.of(context).viewPadding.top > 35;
 
     return NavigationDrawer(
-      selectedIndex: navDrawerIndex,
-      onDestinationSelected: (value) {
+
+      // SECTION - management of the state and events of menu items
+
+      selectedIndex: navDrawerIndex, // Index of menu selected
+      onDestinationSelected: (value) { // Update state with option selected
         setState(() {
           navDrawerIndex = value;
         });
 
+        // Get item of menu selected to navigate
         final menuItem = appMenuItems[value];
-
         context.push(menuItem.link);
 
-        // Method to return to home by closing the menu
+        // Method to closing the menu when return to home
         widget.scaffoldKey.currentState?.closeDrawer();
       },
+
+      // SECTION - Items of menu
+
       children: [
         Padding(
           padding: EdgeInsets.fromLTRB(28, hasNotch ? 5 : 20, 16, 10),
@@ -52,6 +59,10 @@ class _SideMenuState extends State<SideMenu> {
         const Padding(
           padding: EdgeInsets.fromLTRB(28, 10, 28, 10),
           child: Divider(),
+        ),
+        const Padding(
+          padding: EdgeInsets.fromLTRB(28, 10, 28, 10),
+          child: Text('More options'),
         ),
 
         ...appMenuItems

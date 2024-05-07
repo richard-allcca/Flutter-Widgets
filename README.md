@@ -109,7 +109,9 @@ context.read<T>(), which returns T without listening to it
 context.select<T, R>(R cb(T value)), which allows a widget to listen to only a small part of T.
 ```
 
-Utiliza el 'MultiProvider' y dentro crea la instancia inicial de tu provider, si no necesitas el contexto del builder solo usa '_'
+Utiliza el 'MultiProvider' y dentro crea la instancia inicial de tu provider, si no necesitas el contexto del builder solo usa '_' como parámetro
+
+Ejemplos de uso en chat_screen y discover_screen
 
 ```dart
     @override
@@ -131,7 +133,7 @@ Utiliza el 'MultiProvider' y dentro crea la instancia inicial de tu provider, si
 
 ### Flutter_riverpod
 
-Para consumir un provider de `flutter_riverpod` en un `stateLessWidget`
+Para consumir un provider de `flutter_riverpod` un `stateLessWidget`
 debes Reemplazar este por un `ConsumerWidget`
 
 ```Dart

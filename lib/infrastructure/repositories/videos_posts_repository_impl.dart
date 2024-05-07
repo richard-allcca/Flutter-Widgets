@@ -6,12 +6,12 @@ import 'package:widgets_app/domain/datasources/video_posts_datasource.dart';
 import 'package:widgets_app/domain/entities/video_post.dart';
 
 
-class VideoPostRepositoryImpl implements VideoPostsRepository {
+class VideosPostRepositoryImpl implements VideoPostsRepository {
 
-  final VideoPostsDataSource videoDatasource;
+  final VideosPostsDataSource videosDatasource;
 
-  VideoPostRepositoryImpl({
-    required this.videoDatasource
+  VideosPostRepositoryImpl({
+    required this.videosDatasource
   });
 
   @override
@@ -23,7 +23,7 @@ class VideoPostRepositoryImpl implements VideoPostsRepository {
   @override
   Future<List<VideoPost>> getTrendingVideosByPage(int page) {
 
-    return videoDatasource.getTrendingVideosByPage(page);
+    return videosDatasource.getTrendingVideosByPage(page);
 
   }
 

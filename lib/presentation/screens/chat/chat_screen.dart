@@ -4,6 +4,8 @@ import 'package:widgets_app/domain/entities/message.dart';
 import 'package:widgets_app/presentation/provider/chat_provider.dart';
 import 'package:widgets_app/presentation/widgets/widgets.dart';
 
+// INFO - Screen to yes or not application
+
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
@@ -31,6 +33,7 @@ class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    // Consumo de provider
     final chatProvider = context.watch<ChatProvider>();
 
     return SafeArea(

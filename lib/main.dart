@@ -5,11 +5,7 @@
 // import 'package:widgets_app/presentation/screens/screens.dart';
 
 // void main() {
-//   runApp(
-//     const ProviderScope(
-//       child: MainApp()
-//     )
-//   );
+//   runApp( const MainApp() );
 // }
 
 // class MainApp extends ConsumerWidget {
@@ -24,8 +20,8 @@
 //         useMaterial3: true,
 //         colorSchemeSeed: Colors.blue
 //       ),
-//       // home: const CounterScreen(),
-//       home: const CounterFunctionScreen(),
+//       home: const CounterScreen(),
+//       // home: const CounterFunctionScreen(),
 //     );
 //   }
 // }
@@ -64,8 +60,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 // import 'package:widgets_app/config/theme/app_theme.dart';
-// import 'package:widgets_app/infrastructure/datasources/local_video_datasource_impl.dart';
-// import 'package:widgets_app/infrastructure/repositories/video_posts_repository_impl.dart';
+// import 'package:widgets_app/infrastructure/datasources/local_videos_datasource_impl.dart';
+// import 'package:widgets_app/infrastructure/repositories/videos_posts_repository_impl.dart';
 // import 'package:widgets_app/presentation/provider/discover_provider.dart';
 // import 'package:widgets_app/presentation/screens/screens.dart';
 
@@ -77,13 +73,19 @@
 //   @override
 //   Widget build(BuildContext context) {
 
-//     final videoPostRepository = VideoPostRepositoryImpl(
-//       videoDatasource: LocalVideoDataSourceImpl()
+//     // INFO - RepositoryImpl recibe la fuente de datos localVideosDatasourceImpl
+//     final localVideosListRepository = VideosPostRepositoryImpl(
+//       videosDatasource: LocalVideosDataSourceImpl()
 //     );
 
 //     return MultiProvider(
 //       providers: [
-//         ChangeNotifierProvider(create: (_) => DiscoverProvider(videoRepository: videoPostRepository)..loadNextPage())
+//         ChangeNotifierProvider(
+//             create: (_) =>
+//                 DiscoverProvider(videoRepository: localVideosListRepository)
+//                 // Este '..' es un operador de cascada para seguido ejecutar otro método
+//                   ..loadNextVideo()
+//             )
 //       ],
 //       child: MaterialApp(
 //         title: 'Tok Tik',
@@ -98,17 +100,28 @@
 // SECTION - Widgets
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
 
+// DESC - all the screens in the app without Counter with riverpod
+// void main() {
+//   runApp( const MainApp() );
+// }
+
+// DESC - Only for Counter with riverpod
 void main() {
-  runApp( const MainApp() );
+  runApp(
+    const ProviderScope(
+      child: MainApp()
+    )
+  );
 }
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
-  // SECTION - To use with navigation of example 1
+  // DESC - To use with navigation of example 1
   // @override
   // Widget build(BuildContext context) {
   //   return MaterialApp(
@@ -118,7 +131,7 @@ class MainApp extends StatelessWidget {
   //   );
   // }
 
-  // SECTION - To use with navigation of example 2
+  // DESC - To use with navigation of example 2
   // @override
   // Widget build(BuildContext context) {
   //   return MaterialApp(
@@ -132,7 +145,7 @@ class MainApp extends StatelessWidget {
   //   );
   // }
 
-  // SECTION - To use with navigation of go-router
+  // DESC - To use with navigation of go-router
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -142,4 +155,5 @@ class MainApp extends StatelessWidget {
       theme: AppTheme(isDarkMode: false, selectedColor: 3).getTheme(),
     );
   }
+
 }

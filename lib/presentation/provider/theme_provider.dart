@@ -26,3 +26,7 @@ class ThemeNotifier extends StateNotifier<AppTheme> {
     state = state.copyWith(selectedColor: colorIndex);
   }
 }
+
+// INFO - For CounterScreen with provider of riverpod
+
+final isDarkModeProvider = StateProvider((ref)=> false);

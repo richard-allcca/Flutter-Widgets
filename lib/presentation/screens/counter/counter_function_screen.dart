@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-// NOTE
+// INFO DOUBTS
 /*
-Ejemplo continuado de counterScreen para implementar un AppBar con icons
-*/
-/*
-Ejemplo Widgets personalizados para los botones de + y -
+Continued example of CounterScreen to implementation a AppBar with icons.
+Custom widgets example to buttons of + and -
 */
 
 class CounterFunctionScreen extends StatefulWidget {
+
+  // Para utilizar rutas con nombre de go-router (no usar al tiempo que CounterScreen)
   static const String name = 'counter_screen';
 
   const CounterFunctionScreen({super.key});
@@ -23,10 +23,13 @@ class _CounterFunctionScreenState extends State<CounterFunctionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+        // SECTION - Navbar
+
         appBar: AppBar(
           title: const Text('Counter Functions'),
           centerTitle: true,
-          // NOTE - ubica por default un icono a la izquierda
+          // Coloca un icono a la izquierda
           leading: IconButton(
             icon: const Icon(Icons.refresh_outlined),
             onPressed: () {
@@ -35,7 +38,7 @@ class _CounterFunctionScreenState extends State<CounterFunctionScreen> {
               });
             },
           ),
-          // NOTE - ubica por un icono a la Derecha pero puede recibir mas de 1
+          // Coloca un icono a la Derecha pero puede ser mas de 1
           actions: [
             IconButton(
               icon: const Icon(Icons.refresh_outlined),
@@ -47,6 +50,8 @@ class _CounterFunctionScreenState extends State<CounterFunctionScreen> {
             )
           ],
         ),
+
+        // SECTION - Body
 
         body: Center(
           child: Column(
@@ -60,6 +65,9 @@ class _CounterFunctionScreenState extends State<CounterFunctionScreen> {
             ],
           ),
         ),
+
+        // SECTION - Floating Buttons +1 -1 and reset
+
         floatingActionButton: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [

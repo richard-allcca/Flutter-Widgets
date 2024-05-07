@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// INFO - Screen to progress bar
+
 class ProgressScreen extends StatelessWidget {
 
   // Para utilizar rutas con nombre de go-router

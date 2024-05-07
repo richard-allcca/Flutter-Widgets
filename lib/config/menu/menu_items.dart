@@ -64,10 +64,10 @@ const appMenuItems = <MenuItem>[
     icon: Icons.list_alt_outlined
   ),
   MenuItem(
-    title: 'Riverpod Counter',
+    title: 'Counter with Riverpod',
     subTitle: 'Introducción a Riverpod',
     link: '/counter',
-    icon: Icons.add
+    icon: Icons.numbers_outlined
   ),
   MenuItem(
     title: 'Theme change with Riverpod',

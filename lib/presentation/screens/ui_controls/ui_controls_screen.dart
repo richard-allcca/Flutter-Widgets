@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// INFO - Screen to check, ratio and switch buttons
+
 class UiControlsScreen extends StatelessWidget {
   // Para utilizar rutas con nombre de go-router
   static const name = 'ui_controls_screen';

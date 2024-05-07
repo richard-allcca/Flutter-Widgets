@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-// DESC - Para esta pantalla se utilizo assets y su configuración
+// INFO - Para esta pantalla se utilizo assets y su configuración
 
 class SlideInfo {
   final String title;
@@ -132,8 +132,8 @@ class _Slide extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // align column
-          crossAxisAlignment: CrossAxisAlignment.start, // align row
+          mainAxisAlignment: MainAxisAlignment.center, // align row
+          crossAxisAlignment: CrossAxisAlignment.start, // align column
           children: [
             Image(image: AssetImage(imageUrl)),
             const SizedBox(height: 20),

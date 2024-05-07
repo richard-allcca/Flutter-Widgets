@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-//  DESC - On this screen have the modals
+//  INFO - On this screen have the modals
 
 class SnackbarScreen extends StatelessWidget {
 
