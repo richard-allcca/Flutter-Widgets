@@ -137,6 +137,19 @@ Para consumir un provider de `flutter_riverpod` un `stateLessWidget`
 debes Reemplazar este por un `ConsumerWidget`
 
 ```Dart
+    // 1. Config you main with...
+    void main() {
+        runApp(
+            const ProviderScope(
+            child: MainApp()
+            )
+        );
+    }
+
+    // 2. Your class should extend  of ConsumerWidget
+
+    // 3. Method to consume the state of the provider
+
     // Example 1 to modifier the state
     ref.read(counterProvider.notifier).state++;
 

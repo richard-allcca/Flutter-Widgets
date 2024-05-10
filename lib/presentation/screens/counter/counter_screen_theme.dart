@@ -5,9 +5,8 @@ import 'package:widgets_app/presentation/provider/theme_provider.dart';
 
 // INFO - Counter with theme provider - management state
 /*
-Example basic of a screen with 'scaffold'
-which allows you to have elements on the screen like head, body and footer.
-Example of use with StatelessWidget that change to StatefulWidget for management the state
+  - Here class should extend of the ConsumerWidget
+  - Besides it should use 'WidgetRef ref' in the 'build'
 */
 
 class CounterScreenThemeProv extends ConsumerWidget {
@@ -16,6 +15,7 @@ class CounterScreenThemeProv extends ConsumerWidget {
   static const String name = 'counter_screen_theme_prov';
 
   const CounterScreenThemeProv({super.key});
+  // const CounterScreenThemeProv({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,6 +23,28 @@ class CounterScreenThemeProv extends ConsumerWidget {
     final int clickCounter = ref.watch(counterProvider);
     final bool isDarkMode = ref.watch(isDarkModeProvider);
 
+    return _CounterScreen(
+      ref: ref,
+      isDarkMode: isDarkMode,
+      clickCounter: clickCounter
+    );
+  }
+}
+
+class _CounterScreen extends StatelessWidget {
+  const _CounterScreen({
+    // super.key,
+    required this.ref,
+    required this.isDarkMode,
+    required this.clickCounter,
+  });
+
+  final WidgetRef ref;
+  final bool isDarkMode;
+  final int clickCounter;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Counter Screen'),
