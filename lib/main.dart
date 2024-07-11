@@ -103,13 +103,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
+import 'package:widgets_app/presentation/provider/theme_provider.dart';
 
 // DESC - all the screens in the app without Counter with riverpod
 // void main() {
 //   runApp( const MainApp() );
 // }
 
-// DESC - Only for Counter with riverpod
+// DESC - Only for management of state with riverpod
 void main() {
   runApp(
     const ProviderScope(
@@ -118,7 +119,7 @@ void main() {
   );
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   // DESC - To use with navigation of example 1
@@ -147,12 +148,15 @@ class MainApp extends StatelessWidget {
 
   // DESC - To use with navigation of go-router
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
+    final int selectedColor = ref.watch(themeNotifierProvider).selectedColor;
+
     return MaterialApp.router(
       title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(isDarkMode: false, selectedColor: 3).getTheme(),
+      theme: AppTheme(isDarkMode: isDarkMode, selectedColor: selectedColor ).getTheme(),
     );
   }
 

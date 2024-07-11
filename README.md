@@ -1,7 +1,16 @@
 # Widgets_app
 
+compileSdkVersion 34
+
+Este repo contiene las apps:
+
+- Counter
+- Chat simulation
+- Tok tik
+- Widgets
+
 <details>
-  <summary>Table of Contents</summary>
+  <summary>README content </summary>
 
 - <a href="#links-resources">Enlaces a recursos</a>
 - <a href="#notes-of-widgets">Notes of Widgets</a>

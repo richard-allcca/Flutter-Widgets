@@ -6,6 +6,8 @@ final themeProvider = StateProvider((ref) => false);
 
 final selectedColorProvider = StateProvider((ref) => 0);
 
+// INFO - For widgets/theme-changer
+
 // State Inmutable
 final colorListProvider = Provider((ref) => colorList);
 
