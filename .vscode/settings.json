@@ -8,5 +8,25 @@
     "riverpod",
     "sublist",
     "unfocus"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#4be4ff",
+    "activityBar.background": "#4be4ff",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#ff20de",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#4be4ff",
+    "statusBar.background": "#18dcff",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#00c1e4",
+    "statusBarItem.remoteBackground": "#18dcff",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#18dcff",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#18dcff99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#18dcff"
 }
